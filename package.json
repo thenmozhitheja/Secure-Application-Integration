@@ -1,0 +1,22 @@
+{
+  "name": "edvyro-task4-secure-integration",
+  "version": "1.0.0",
+  "description": "Secure internship application integration - Edvyro Task 4",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test",
+    "test:report": "node --test > test-report.txt 2>&1"
+  },
+  "engines": { "node": ">=22" },
+  "dependencies": {
+    "better-sqlite3": "^11.10.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.1.0"
+  },
+  "devDependencies": {
+    "supertest": "^7.1.4"
+  }
+}

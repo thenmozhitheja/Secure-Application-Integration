@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse internships and submit an application securely.">
+  <title>Internship Portal | Edvyro Task 4</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand-mark" aria-hidden="true">E</div>
+      <div><h1>Internship Portal</h1></div>
+      <span class="secure-pill">● Secure application</span>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="intro">
+      <p class="eyebrow">YOUR NEXT OPPORTUNITY</p>
+      <h2>Find an internship that fits you.</h2>
+      <p class="muted">Explore current openings and apply using the secure form below.</p>
+    </section>
+
+    <section aria-labelledby="opportunities-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">OPEN POSITIONS</p><h2 id="opportunities-title">Available internships</h2></div>
+        <button id="retry-button" class="button button-secondary" type="button">↻ Retry loading</button>
+      </div>
+      <p id="loading-state" class="state" role="status">Loading internships…</p>
+      <div id="error-state" class="state error" role="alert" hidden>
+        <span id="error-message">Could not load internships.</span>
+        <button id="error-retry" class="text-button" type="button">Try again</button>
+      </div>
+      <div id="internship-list" class="cards" aria-live="polite"></div>
+      <p id="empty-state" class="state" hidden>No internships are available right now.</p>
+    </section>
+
+    <section class="application-section" aria-labelledby="apply-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">TAKE THE NEXT STEP</p><h2 id="apply-title">Apply for an internship</h2></div>
+      </div>
+      <div class="form-card">
+        <p class="muted">Choose an open internship and enter your contact details. Fields marked * are required.</p>
+        <form id="application-form" novalidate>
+          <label for="internship-id">Internship <span>*</span></label>
+          <select id="internship-id" name="internship_id" required>
+            <option value="">Choose an internship</option>
+          </select>
+          <div class="field-grid">
+            <div><label for="applicant-name">Full name <span>*</span></label>
+              <input id="applicant-name" name="applicant_name" type="text" minlength="2" maxlength="80" autocomplete="name" required placeholder="e.g. Thenmozhi N">
+            </div>
+            <div><label for="applicant-email">Email address <span>*</span></label>
+              <input id="applicant-email" name="applicant_email" type="email" maxlength="254" autocomplete="email" required placeholder="you@example.com">
+            </div>
+          </div>
+          <p class="privacy-note">Your details are used only to record this application in this demo project.</p>
+          <button id="submit-button" class="button button-primary" type="submit">Submit application</button>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+    <footer><span>Edvyro Task 4 · Secure Application Integration</span><a href="/api/health" target="_blank" rel="noopener noreferrer">API health</a></footer>
+  </main>
+  <script src="/app.js" defer></script>
+</body>
+</html>
